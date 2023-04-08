@@ -8,3 +8,4 @@ author = ["Chandrashekhar Koteakr <shekhar.kotekar@gmail.com>"]
 
 [dependencies]
 rand = "0.8.5"
+colored = "2.0.0"

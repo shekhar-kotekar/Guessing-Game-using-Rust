@@ -2,6 +2,7 @@ use std::cmp::Ordering;
 use std::io;
 
 use rand::Rng;
+use colored::*;
 
 fn main() {
     println!("Guess the number!");
@@ -16,20 +17,25 @@ fn main() {
             .read_line(&mut your_guess)
             .expect("Failed to read line...");
 
-        let guess: u32 = your_guess
+        let guess: u32 = match your_guess
             .trim()
-            .parse()
-            .expect("Please type an integer only.");
+            .parse() {
+            Ok(number) => number,
+            Err(_) => {
+                println!("Please enter integer between 0 to 100 only.");
+                continue;
+            }
+        };
 
         println!("You guessed: {guess}");
 
         match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too small"),
+            Ordering::Less => println!("{}","Too small".red()),
             Ordering::Equal => {
-                println!("Correct guess, you are a winner !");
+                println!("{}","Correct guess, you are a winner !".green().bold());
                 break;
             }
-            Ordering::Greater => println!("Too big")
+            Ordering::Greater => println!("{}","Too big".yellow())
         }
     }
 }
