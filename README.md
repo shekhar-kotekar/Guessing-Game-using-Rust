@@ -1,4 +1,4 @@
-# Guessing-Game-using-Rust
+# Number guessing game using Rust
 This repository contains a simple command line based guessing game written in Rust.
 Code is written by following [this YouTube tutorial](https://youtu.be/H0xBSbnQYds?list=TLPQMDgwNDIwMjMay0T7xM6hQQ).
 
@@ -12,7 +12,7 @@ There are two ways to try this game:
    1. Clone the repository
    2. Execute `cargo run` command and follow the steps
 
-## What is NOT included in this repository:
+## What is NOT included in this repository?
 
 - TDD best practices
 - Corner cases in input handling
